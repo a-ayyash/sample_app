@@ -1,4 +1,7 @@
 module ApplicationHelper
+  def logo
+    "logo.png"
+  end
   
   def title
     base_title = "Ruby On Rails Tutorials Sample App"
