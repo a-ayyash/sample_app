@@ -26,14 +26,9 @@ class User < ActiveRecord::Base
                        :length => { :within => 6..40 }
                        
   before_save :encrypt_password
-  def asdf(asd)
-    puts asd
-  end
-  
   
   def has_password?(submitted_password)
     #compare encrypted_password with the encrypted version of the submitted_password
-    puts submitted_password
     encrypted_password == encrypt(submitted_password)
   end
   
@@ -47,7 +42,6 @@ class User < ActiveRecord::Base
   
   def encrypt_password
     self.salt = make_salt if new_record?
-    puts self.salt
     self.encrypted_password = encrypt(self.password)
   end
   def make_salt 
